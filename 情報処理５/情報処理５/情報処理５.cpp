@@ -31,7 +31,9 @@ int main()
 	for (int i = 0; i < 5; i++) {// ①ここの数値を変えてみると… 
 		cout << i << ": " << data[i] << endl;
 
-		const int NUM_DATA = 5;
+	//キーボードからの入力
+	/*
+    const int NUM_DATA = 5;
 		int data[NUM_DATA];
 		for (int i = 0; i < NUM_DATA; i++) {
 			 cout << i + 1 << "番目の値を入力してください\n";
@@ -39,14 +41,23 @@ int main()
 		}
 		for (int i = 0; i < NUM_DATA; i++) cout << i + 1 << ": " << data[i] << endl;
 
+    */
+		
+		const int NUM_STUDENDS = 50;
+		int engs[NUM_STUDENTS];
+
+		for (int i = 0; i < NUM_STUDENTS; i++) engs[i] = get_rand() % 100;
+
+		int total = 0;
+		for (int i = 0; i < NUM_STUDENDS; i++) total  += engs[i];
+
+		cout << "英語の平均点:" << total / (double)NUM_STUDENDS << endl;
+
+		
+
 	}
 
 
-	const float NUM_STUDENTS = 50;
-	int engs[NUM_STUDENTS];
-		for (int i = 0; i < NUM_STUDENTS; i++) engs[i] = get_rand() % 100;
-	int total = 0;
-	for (int i = 0; i < NUM_STUDENTS; i++) total += engs[i];
-	cout << "英語の平均点: " << total / (double)NUM_STUDENTS << endl;
+	
 
 }
