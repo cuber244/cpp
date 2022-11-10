@@ -20,28 +20,28 @@ int main()
 	cout << "数学" << endl;
 	for (int i = 0; i < NUM_STUDENTS; i++) cout << i << ": " << maths[i] << endl;
 
-	int data[5]; // 整数リテラルで指定する場合。 
-	data[0] = 1;
-	data[1] = 2;
-	data[2] = 3;
-	data[3] = 4;
-	data[4] = 5;
+	//int data[5]; // 整数リテラルで指定する場合。 
+	//data[0] = 1;
+	//data[1] = 2;
+	//data[2] = 3;
+	//data[3] = 4;
+	//data[4] = 5;
+	int data[] = { 1,2,3,4,5 };
 	// 初期化は、こうも書ける。この場合個数は自動で設定される。 
 	 // int data[] = {1,2,3,4,5}; 
-	for (int i = 0; i < 5; i++) {// ①ここの数値を変えてみると… 
+	for (int i = 0; i < 1; i++) {// ①ここの数値を変えてみると… 
 		cout << i << ": " << data[i] << endl;
 
 	//キーボードからの入力
-	/*
+
     const int NUM_DATA = 5;
 		int data[NUM_DATA];
 		for (int i = 0; i < NUM_DATA; i++) {
 			 cout << i + 1 << "番目の値を入力してください\n";
 			cin >> data[i];
 		}
-		for (int i = 0; i < NUM_DATA; i++) cout << i + 1 << ": " << data[i] << endl;
-
-    */
+		for (int i = 0; i < NUM_DATA ; i++) cout << i + 1 << ": " << data[i] << endl;
+		
 		
 		const int NUM_STUDENDS = 50;
 		int engs[NUM_STUDENTS];
@@ -50,7 +50,7 @@ int main()
 
 		int total = 0;
 		for (int i = 0; i < NUM_STUDENDS; i++) total  += engs[i];
-
+		cout << "合計点:" << total<< "点" << endl;
 		cout << "英語の平均点:" << total / (double)NUM_STUDENDS << endl;
 
 		
@@ -58,6 +58,6 @@ int main()
 	}
 
 
-	
+		
 
 }
