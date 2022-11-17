@@ -17,11 +17,17 @@ int main()
 }
 
 unsigned int get_rand() // 実装はここで 
-{ // 64ビット幅の乱数を生成する関数 
+{ // 64ビット幅の乱数を生	成する関数 
 	static std::mt19937_64 mt64(0);
 	return mt64();
 	
 }
 
+void PrintIncArray(int * a) 
+{
+	int total = 0;
+	for(int i=0; i<5; i++)k
+
+}
 
 
