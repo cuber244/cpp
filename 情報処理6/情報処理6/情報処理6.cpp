@@ -2,19 +2,16 @@
 using namespace std;
 
 
-int sum(int a, int b)
+void mypair(int a = 1, int b = 2)
 {
-    return a + b;
+	cout << "a: " << a << " ";
+	cout << "b: " << b << endl;
 }
 int main()
 {
-    int wa;
-    wa = sum(10, 50); // int a = 10, b=50; wa = sum(a, b);としてみる 
-    cout << wa << ".\n";
-
-
-
-
-
-
+	mypair(3, 4); // 引数全部指定 
+	mypair(5); // 最初だけ指定 
+	mypair(); // 全く指定しない 
+	
 }
+
