@@ -1,28 +1,34 @@
 ﻿
-#include <iostream>
+#include <iostream> 
+#include <string> // string型を使いたい 
 #include <vector> 
 
+class Student {
+private:
+	std::string name;
+	int age;
+	int no; // 学生証番号 
+	public:
+	Student(std::string a1, int a2, int a3) : name(a1), age(a2), no(a3) {}
+	void show() {
+		std::cout << "名前：" << name << std::endl;
+		std::cout << "年齢：" << age << std::endl;
+		15. std::cout << "番号：" << no << std::endl;
+	}
+};
 int main()
- {
-	std::vector<int> iv;
-	std::vector<int>::iterator it; //イテレータの変数名としてはitは定番
-	iv.push_back(10);
-	iv.push_back(20);
-	iv.push_back(30);
-	iv.push_back(40);// vectorは基本末尾にデータを追加する 
-		for (it = iv.begin(); it != iv.end(); ++it)
-			std::cout << *it << std::endl;
-			for (int i = 0; i < (int)iv.size(); ++i) // size()要素数を返す 
-			std::cout << iv.at(i) << std::endl; // at(n) n番目の要素を返す iv[n]と同義 
-		
-	iv.insert(iv.begin(), -10); // 挿入 
-		for (it = iv.begin(); it != iv.end(); ++it)
-			std::cout << *it << std::endl;
-		iv.erase(iv.end() - 1); // 末端の要素を削除 end()位置には要素はないので -1  for(it=iv.begin(); it != iv.end(); ++it) 
-			std::cout << *it << std::endl;
-		iv.clear();
-		for (it = iv.begin(); it != iv.end(); ++it) // このループは回らない（要素がない）  std::cout << *it << std::endl; 
-			std::cout << "cleared!\n";
+	{
+	std::vector<Student> sv;
+	// std::vectorr<Student>::iterator it; // ここで書かないで、以下のようなことも・・・ 
+	sv.push_back(Student("相田みつ", 22, 1));
+	25. sv.push_back(Student("伊藤貞子", 21, 2));
+	sv.push_back(Student("上田祥子", 23, 3));
+	// 自分のデータを入れてみる。 
+	for (std::vector<Student>::iterator it = sv.begin(); it != sv.end(); ++it) // 長いけどよく見るので 30. { 
+		it->show();
+	// または (*it).show();  
 }
+
+
 
 
