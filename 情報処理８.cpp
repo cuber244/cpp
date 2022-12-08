@@ -3,28 +3,26 @@
 #include <vector> 
 
 int main()
-{
-	struct Student {// 構造体を定義 
-		char name[20];
-		int math;
-		int eng;
-		
-	};
-	Student sarray[55]; // 今年は55名。来年は？転入転出があったら？ 
-	Student chiba_u[3210]; // 全学だとこうなるかも。こんなの考えたくない 
-
-	std::vector<int> iv; //vectorはstdの名前空間にある 
-	std::vector<int>::iterator p; //pはポインタと同等。アスタリスク(*)はないけど 
+ {
+	std::vector<int> iv;
+	std::vector<int>::iterator it; //イテレータの変数名としてはitは定番
 	iv.push_back(10);
-    iv.push_back(20);
-	iv.push_back(30); // 以下同様に何個でも追加できる。 
-	for (p = iv.begin(); p != iv.end(); ++p) {
-		std::cout << *p << std::endl;
-	}
-	// もちろん配列と同じようにも書ける(sizeについては後述) 
-	for (int i = 0; i < iv.size(); ++i) {
-		std::cout << iv[i] << std::endl;
-	}
-	
+	iv.push_back(20);
+	iv.push_back(30);
+	iv.push_back(40);// vectorは基本末尾にデータを追加する 
+		for (it = iv.begin(); it != iv.end(); ++it)
+			std::cout << *it << std::endl;
+			for (int i = 0; i < (int)iv.size(); ++i) // size()要素数を返す 
+			std::cout << iv.at(i) << std::endl; // at(n) n番目の要素を返す iv[n]と同義 
+		
+	iv.insert(iv.begin(), -10); // 挿入 
+		for (it = iv.begin(); it != iv.end(); ++it)
+			std::cout << *it << std::endl;
+		iv.erase(iv.end() - 1); // 末端の要素を削除 end()位置には要素はないので -1  for(it=iv.begin(); it != iv.end(); ++it) 
+			std::cout << *it << std::endl;
+		iv.clear();
+		for (it = iv.begin(); it != iv.end(); ++it) // このループは回らない（要素がない）  std::cout << *it << std::endl; 
+			std::cout << "cleared!\n";
 }
+
 
